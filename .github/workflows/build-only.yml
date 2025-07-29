@@ -21,10 +21,14 @@ jobs:
         run: |
           ./package.sh
 
-      - name: Upload packages
+      - name: Upload zip packages
         uses: actions/upload-artifact@v4
         with:
-          name: frp-packages
-          path: |
-            release/packages/*.zip
-            release/packages/*.tar.gz
+          name: frp-packages-zip
+          path: release/packages/*.zip
+
+      - name: Upload tar.gz packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: frp-packages-tar-gz
+          path: release/packages/*.tar.gz
